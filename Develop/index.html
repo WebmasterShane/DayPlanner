@@ -31,38 +31,38 @@
        <div class="container time-block">
        <div class="row past" >
         <aside class="hour past-hr"></aside>
-        <textarea id = "textInput1">test test test</textarea>
+        <textarea id = "textInput1"></textarea>
                <button class="saveBtn col saveBtn1"><img src="savebtn.png"></button>       
       </div>
       <div class="row past" >
         <aside class="hour past-hr1"></aside>
-        <textarea class ="textInput1"></textarea>
-         <button class="saveBtn col"><img src="savebtn.png"></button>       
+        <textarea id ="textInput2"></textarea>
+         <button class="saveBtn col saveBtn2"><img src="savebtn.png"></button>       
       </div>
      <div class="row present" >
       <div class="hour present-hr"></div>
-      <textarea class ="textInput3"></textarea>
-      <button class="saveBtn col"><img src="savebtn.png"></button>       
+      <textarea id ="textInput3"></textarea>
+      <button class="saveBtn col saveBtn3"><img src="savebtn.png"></button>       
    </div>
    <div class="row future" >
     <aside class="hour future-hr"></aside>
-    <textarea class ="textInput4"></textarea>
-    <button class="saveBtn col"><img src="savebtn.png"></button>       
+    <textarea id ="textInput4"></textarea>
+    <button id="saveBtn4" class="saveBtn col"><img src="savebtn.png"></button>       
  </div>
  <div class="row future" >
   <aside class="hour future-hr1"></aside>
-  <textarea class ="textInput5"></textarea>
-  <button class="saveBtn col"><img src="savebtn.png"></button>       
+  <textarea id ="textInput5"></textarea>
+  <button class="saveBtn col saveBtn5"><img src="savebtn.png"></button>       
 </div>
 <div class="row future" >
   <aside class="hour future-hr2"></aside>
-  <textarea class ="textInput6"></textarea>
-  <button class="saveBtn col"><img src="savebtn.png"></button>       
+  <textarea id ="textInput6"></textarea>
+  <button id = "saveBtn6" class="saveBtn col"><img src="savebtn.png"></button>       
 </div>
 <div class="row future" >
   <aside class="hour  future-hr3"></aside>
-  <textarea class ="textInput7"></textarea>
-  <button class="saveBtn col "><img src="savebtn.png"></button>       
+  <textarea id ="textInput7"></textarea>
+  <button id= "saveBtn7" class="saveBtn col"><img src="savebtn.png"></button>       
 </div>
       
     </div>
@@ -90,12 +90,73 @@
       $(".future-hr2").append(parseInt(presentHr)+ 3 + amPm);
       $(".future-hr3").append(parseInt(presentHr)+ 4 + amPm);
       ;
+      // $("#textInput1").text(localStorage.getItem(local1.value))
 
-      $(".saveBtn").on("click", function(event){
+      $(".saveBtn1").on("click", function(event){
         var input1 = $("#textInput1").val();
-        localStorage.setItem(input1)
-        
+        var local1
+        localStorage.setItem("local1", input1)
+        console.log(input1)
+        $("#textInput1").text(localStorage.getItem("local1".value))
+        console.log(localStorage.getItem(local1.value))        
       })
+      $("#textInput1").text(localStorage.getItem("local1", "value"))
+      $(".saveBtn2").on("click", function(event){
+        var input2 = $("#textInput2").val();
+        var local2
+        localStorage.setItem("local2", input2)
+        
+        $("#textInput2").text(localStorage.getItem("local2".value))
+        console.log(localStorage.getItem(local2.value))        
+      })
+      $("#textInput2").text(localStorage.getItem("local2", "value"))
+      $(".saveBtn3").on("click", function(event){
+        var input3 = $("#textInput3").val();
+        var local3
+        localStorage.setItem("local3", input3)
+        console.log(input3)
+        $("#textInput3").text(localStorage.getItem("local3".value))
+        console.log(localStorage.getItem(local3.value))        
+      })
+      $("#textInput3").text(localStorage.getItem("local3", "value"))
+
+      $("#saveBtn4").on("click", function(event){
+        var input4 = $("#textInput4").val();
+        var local4
+        localStorage.setItem("local4", input4)
+        
+        $("#textInput4").text(localStorage.getItem("local4".value))
+            
+      })
+      $("#textInput4").text(localStorage.getItem("local4", "value"))
+      
+       $(".saveBtn5").on("click", function(event){
+         var input5 = $("#textInput5").val();
+         var local5
+         localStorage.setItem("local5", input5)
+         console.log(input5)
+         $("#textInput5").text(localStorage.getItem("local5".value))
+                
+       })
+       $("#textInput5").text(localStorage.getItem("local5", "value"))
+       $("#saveBtn6").on("click", function(event){
+         var input6 = $("#textInput6").val();
+         var local6
+        localStorage.setItem("local6", input6)
+        console.log(input6)
+         $("#textInput6").text(localStorage.getItem("local6".value))
+            
+       })
+       $("#textInput6").text(localStorage.getItem("local6", "value"))
+       $("#saveBtn7").on("click", function(event){
+         var input7 = $("#textInput7").val();
+         var local7
+         localStorage.setItem("local7", input7)
+         console.log(input7)
+         $("#textInput7").text(localStorage.getItem("local7".value))
+              
+       })
+      $("#textInput7").text(localStorage.getItem("local7", "value"))
 
 
     </script>
