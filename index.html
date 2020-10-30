@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+       <div class="container time-block">
+       <div class="row past" >
+        <aside class="hour past-hr"></aside>
+        <textarea id = "textInput1"></textarea>
+               <button class="saveBtn col saveBtn1"><img src="savebtn.png"></button>       
+      </div>
+      <div class="row past" >
+        <aside class="hour past-hr1"></aside>
+        <textarea id ="textInput2"></textarea>
+         <button class="saveBtn col saveBtn2"><img src="savebtn.png"></button>       
+      </div>
+     <div class="row present" >
+      <div class="hour present-hr"></div>
+      <textarea id ="textInput3"></textarea>
+      <button class="saveBtn col saveBtn3"><img src="savebtn.png"></button>       
+   </div>
+   <div class="row future" >
+    <aside class="hour future-hr"></aside>
+    <textarea id ="textInput4"></textarea>
+    <button id="saveBtn4" class="saveBtn col"><img src="savebtn.png"></button>       
+ </div>
+ <div class="row future" >
+  <aside class="hour future-hr1"></aside>
+  <textarea id ="textInput5"></textarea>
+  <button class="saveBtn col saveBtn5"><img src="savebtn.png"></button>       
+</div>
+<div class="row future" >
+  <aside class="hour future-hr2"></aside>
+  <textarea id ="textInput6"></textarea>
+  <button id = "saveBtn6" class="saveBtn col"><img src="savebtn.png"></button>       
+</div>
+<div class="row future" >
+  <aside class="hour  future-hr3"></aside>
+  <textarea id ="textInput7"></textarea>
+  <button id= "saveBtn7" class="saveBtn col"><img src="savebtn.png"></button>       
+</div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script>
+      console.log(moment());
+      $("#currentDay").append(moment().format("dddd, MMMM Do YYYY"));
+      //create varible for past hours
+     
+      //create varible for present
+      presentHr = moment().format("h")
+      console.log(presentHr)
+      amPm = moment().format("A")
+      console.log(moment().format("h"))
+      
+      //create varible for future hours
+      var futureHr
+      $("#currentDay").append(moment().format("dddd, MMMM Do YYYY"));
+      $(".present-hr").append(presentHr + amPm);
+      $(".past-hr1").append(presentHr - 1 + amPm);
+      $(".past-hr").append(presentHr - 2 + amPm);
+      $(".future-hr").append(parseInt(presentHr)+ 1 + amPm);
+      $(".future-hr1").append(parseInt(presentHr)+ 2 + amPm);
+      $(".future-hr2").append(parseInt(presentHr)+ 3 + amPm);
+      $(".future-hr3").append(parseInt(presentHr)+ 4 + amPm);
+      ;
+      // $("#textInput1").text(localStorage.getItem(local1.value))
+
+      $(".saveBtn1").on("click", function(event){
+        var input1 = $("#textInput1").val();
+        var local1
+        localStorage.setItem("local1", input1)
+        console.log(input1)
+        $("#textInput1").text(localStorage.getItem("local1".value))
+        console.log(localStorage.getItem(local1.value))        
+      })
+      $("#textInput1").text(localStorage.getItem("local1", "value"))
+      $(".saveBtn2").on("click", function(event){
+        var input2 = $("#textInput2").val();
+        var local2
+        localStorage.setItem("local2", input2)
+        
+        $("#textInput2").text(localStorage.getItem("local2".value))
+        console.log(localStorage.getItem(local2.value))        
+      })
+      $("#textInput2").text(localStorage.getItem("local2", "value"))
+      $(".saveBtn3").on("click", function(event){
+        var input3 = $("#textInput3").val();
+        var local3
+        localStorage.setItem("local3", input3)
+        console.log(input3)
+        $("#textInput3").text(localStorage.getItem("local3".value))
+        console.log(localStorage.getItem(local3.value))        
+      })
+      $("#textInput3").text(localStorage.getItem("local3", "value"))
+
+      $("#saveBtn4").on("click", function(event){
+        var input4 = $("#textInput4").val();
+        var local4
+        localStorage.setItem("local4", input4)
+        
+        $("#textInput4").text(localStorage.getItem("local4".value))
+            
+      })
+      $("#textInput4").text(localStorage.getItem("local4", "value"))
+      
+       $(".saveBtn5").on("click", function(event){
+         var input5 = $("#textInput5").val();
+         var local5
+         localStorage.setItem("local5", input5)
+         console.log(input5)
+         $("#textInput5").text(localStorage.getItem("local5".value))
+                
+       })
+       $("#textInput5").text(localStorage.getItem("local5", "value"))
+       $("#saveBtn6").on("click", function(event){
+         var input6 = $("#textInput6").val();
+         var local6
+        localStorage.setItem("local6", input6)
+        console.log(input6)
+         $("#textInput6").text(localStorage.getItem("local6".value))
+            
+       })
+       $("#textInput6").text(localStorage.getItem("local6", "value"))
+       $("#saveBtn7").on("click", function(event){
+         var input7 = $("#textInput7").val();
+         var local7
+         localStorage.setItem("local7", input7)
+         console.log(input7)
+         $("#textInput7").text(localStorage.getItem("local7".value))
+              
+       })
+      $("#textInput7").text(localStorage.getItem("local7", "value"))
+
+
+    </script>
+  </body>
+</html>
